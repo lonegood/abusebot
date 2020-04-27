@@ -1,0 +1,177 @@
+import nltk
+nltk.download('popular', quiet=True)
+
+import random
+
+import telebot
+
+bot = telebot.TeleBot('1178945375:AAEQyZlg2vLenVCcwPwuaDsOtHA2xH1lU_E')
+
+@bot.message_handler(commands=['start'])
+def start_message(message):
+    bot.send_message(message.chat.id, 'Привет,Лен')
+
+@bot.message_handler(content_types=['text'])
+def send_text(message):
+    if 'привет' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['Привет, Лен.', 'Надо же. заблочила меня, а теперб сама пишешь', 'соскучилась да?', 'ну привет.']))
+    elif 'пока' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['что пока?', 'не хочешь со мной больше говорить?', 'на этом я так понимаю разговор окончен?', 'ну пока значит пока. ничего больше не хочешь сказать?']))
+    if 'славик' in message.text.lower():
+        bot.send_message(message.chat.id,random.choice(['мне нравится когда ты называешь меня по имени', 'да?', 'что ты хотела Лен', 'я тебя слушаю оч внимательно']))
+    elif 'люблю' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ну я не виноват', 'за что?', 'если бы ты раньше сказала. теперь от тебя мне не надо уже ничего', 'зачем было мне морочить тогда голову раньше']))
+    if 'славочка' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['не ожидал такого ласкового обращения', 'это ты так издеваешься?', 'подлизываешься', 'Лен, всё равно мне сложно с тобой общаться после того как ты меня заблокировала']))
+    elif 'не любишь' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['конечно, Славик всегда самый плохой и злой', 'а за что любить', 'я же говорил раньше что люблю. может не говорил но намекал точно', 'ты странная лен. извини.']))
+    if 'ладно' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ну ладно. тогда одолжишь 200эвро? мне правда неудобно просить', 'что блин ладно.', 'ну ок.', 'делай как знаешь.']))
+    elif 'зачем' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['не со зла, поверь', 'я ничего такого не хотел', 'я просто действовал как сердце подсказывало. наверное так было нужно', 'я не знаю сам. честно очень жалею.']))
+    if 'почему' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['это к тебе мне кажется вопрос.подумай почему', 'я все уже сказал выше', 'а то я сам знаю. я же бесчуственый как ты говорила', 'просто так.']))
+    elif 'слава' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['нашей родине', 'какая ты стала ласковая', 'мило.', 'Лен ну что такое опять']))
+    if 'издеваешься' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['нет, почему?', 'если тебе так показалось то я не хотел', 'тебе кажется', 'вечно ты меня хочешь выставить виноватым,нуну']))
+    elif 'не издевайся' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ок не буду. так тебе спокойнее?', 'ни капли,Лена', 'ты меня таким злым считаешь?', 'глупо так говорить что я издеваюсь над тобой.и в мыслях не было']))
+    if 'не издевайся надо мной' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['с чего ты вазяла что я издеваюсь', 'почему ты думаешь что можешь знать что я имел ввиду под своими словами', 'я уже честно не знаю что тебе сказать.', 'я же не палач какой-нибудь']))
+    elif 'хватит издеваться' in message.text.lower():
+        bot.send_message(message.chat.id, 'я не издевался над тобой никогда,Лен.')
+    if 'ты любишь меня?' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['о таком лично говорят. а ты на карантине же)', 'а ты не догадываешься', 'Лена,я не знаю.', 'тебе это так важно?']))
+    elif 'нравлюсь' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['как девушка?да, я же говорил', 'а то ты не знаешь сама', 'я бы тогда не писал', 'когдато очень нравилась.сейчас ты стала какая-то другая.не знаю почему. такое впечатление.']))
+    if 'нравишься' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ты чтото от меня хочешь?', 'ну мне конечно приятно', 'Лен,с такими заявлениями я не знаю что говорить', 'я не поверю тебе уже никогда']))
+    elif 'не нравишься' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['спасибо леночка за комплимент', 'это только твое дело', 'но зачемто ты же мне пишешь', 'я не оч верю в это если честно']))
+    if 'ошибаешься' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ну все ошибаются', 'я у тебя всегда ошибаюсь', 'знаешь когда ты так говоришь мне не очень приятно. мы же за открытый разговор да?', 'ну может и ошибаюсь,но то что я сказал я так чуствую']))
+    elif 'сказать' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['я уже сказал что хочу встретиться', 'мне вообще нечего сказать', 'я все уже сказал тебе', 'не понимаю что ты хочешь. конкретно.']))
+    if 'нет' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ну у тебя всегда на все нет Лена', 'когда ты говоришь нет я слышу да если честно', 'ну на нет и суда нет.но ты еще подумай', 'я не ожидал другого от тебя ответа.']))
+    elif 'да' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ну уж тогда извини.', 'а чего ты хотела.', 'а ты уверена?а точно? с тобой хочется по сто раз все переспрашивать.', 'я рад.']))
+    if 'не хочу' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ок понятно', 'как хочешь, это твой выбор', 'ладно Лена. твоеслово для меня закон', 'вообщето странно.по тебе кажется что хочешь.']))
+    elif 'помнишь' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['я только про очки помню', 'ну извини Лен за мои роментические воспоминания,не думал что они у тебя тоже есть', 'ты злопамятная оказывается.', 'мне жаль что ты только это помнишь.но видимо это свойство твоего характера']))
+    if 'злой' in message.text.lower():
+        bot.send_message(message.chat.id, 'я не сомневался если честно что ты так скажешь.')
+    elif 'плохой' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ну если ты так решила то пусть я для тебя буду плохой', 'знаешь по сколько раз я это уже слышу от всех.', 'лен такими словами на ветер не бросаются.', 'плохой такое детсткое слово']))
+    if 'поговори' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ты сама меня заблочила помнишь?)', 'я не знаю о чем с тобой разговаривать', 'ну я рад конечно что ты идешь на контакт', 'а тогда не хотела поговорить.что теперь случилось?']))
+    elif 'дурак' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['окей, ясно. но тыто тоже не большого ума', 'думай как хочешь', 'мне бы не хотелось тебя в ответ дурой назвать,но провоцируешь', 'конечно дурак. дада я дурак. я согласен да.']))
+    if 'зачем ты так' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['как так?', 'ты о чем?', 'не понял тебя лен', 'говори нормально.что тебе не нравится']))
+    elif 'зло' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['слушай лен, я не знаю что там ты себе вообразила и почему я у тебя такой плохой,но за этими фантазиями ты помоему меня как человека не видишь', '', '', '']))
+    if 'леночка хорошая' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['кто тебе сказал?)', 'ну да,Лена хорошая, славик плохой, как всегда', 'конечно хорошая.но иногда очень странная', 'себя только любишь']))
+    elif 'лиза' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['Лиза вобщето меня тоже грозилась заблочить))не знаешь почему?)', 'а сама не можешь со всем разобраться?', 'я думал лиза не знает о наших с тобой разговорах. думал ты мудрее', 'женской дружбы есличто не бывает.бывает только конкуренция.']))
+    if 'не знаю' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['никогда ничего не знаешь, ясно))', 'ну конечно удобнее всего не знать', 'просто закрой на это глаза.', 'так узнай. спроси.']))
+    elif 'знаю' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ну расскажи тогда', 'рад что ты все поняла', 'всезнающая Лена))', 'я не уверен что ты правильно знаешь но пусть будет потвоему']))
+    if 'что ясно' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['солнце красно. блин лена,до тебя вобще ничего не доходит?', 'ясно что ты ко мне неравнодушна всееще. а пытаешься доказать обратное', 'ты знаешь сама.', 'ну подумай.ты же умная девочка Лена']))
+    elif 'что тебе ясно' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['что ты на меня зла ни за что', 'ничего не ясно уже. ты никогда прямо ничего не говоришь', 'ясно что ты не оч хочешь со мной овобще общаться.но тогда почему пишешь', 'ясно что ты очень обидвичая. как все бабы']))
+    if 'обиделась' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['скатертью дорога', 'а что с тобой надо как смаленькой нянчится?', 'ты всегда обижаешься', 'тебя так легко задеть.как будто нет никаких ценостей в жизни']))
+    elif 'спокойной ночи' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['тебе тоже Лен. хороших снов после этого разговора.', 'ну раз ты спать то и я пойду.', 'а мне не спится все равно', 'ты ж все равно спать не ляжешь.']))
+    if 'слушай' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['всегда к твоим услугам Лен', 'что?', 'слушаю тебя внимательно', 'ну слушаю слушаю.']))
+    elif 'не хотела' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ну так всегда если чесно)', 'может тогда извинишься?', 'позно уже про это говорить', 'ну мне жаль что ты себя виноватой чувствуешь.тыто не виновата.']))
+    if 'что?' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ничего', 'ничего особенного', 'то что ты сама сказала до этого.', 'теперь буду молчать,извини. мне кажется нет смысла говорить.']))
+    elif 'да что?' in message.text.lower():
+        bot.send_message(message.chat.id, 'НИЧЕГО')
+    if 'что делаешь' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ничего особенного что могло бы привлечь твое внимание)', 'занимаюсь. так что я занят извини', 'просто гуляю.', 'сижу на ковре. а ты?']))
+    elif 'бесишь' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['да ну неужели?чем же я это заслужил?', 'тогда иди и успокойся', 'чем это я тебя бешу интересно', 'знаешь ты меня тоже бесишь иногда ужасно.но мне кажется это какието романтические чувства. извини за подробность']))
+    if 'всем' in message.text.lower():
+        bot.send_message(message.chat.id, 'ах всем. ну ясно лена, не хочешь говорить по человечески со мной.')
+    elif 'Славик?' in message.text.lower():
+        bot.send_message(message.chat.id, 'да-да, моя леди.')
+    if 'тупой' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['оскорбления пошли', 'помоему я себе никгда не позволял такое говорить в твой адрес.или ошибаюсь?', 'а ты конечно лучше всех Лен. ты не думаешь совсем что люди чувствуют другие?', 'говоришь я бесчувственный,да?']))
+    elif 'заслужил' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['а ты типа нет)', 'чем же это?', 'заслужил это когда старался.а я не старался', 'это было резко.но отрезвляюще. умеешь ты так сказать.']))
+    if 'я нет' in message.text.lower():
+        bot.send_message(message.chat.id, 'ты такая всегда уверенная в себе. нуну. завидую тебе.')
+    elif 'как дела?' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['как сажа бела)а у тебя?', 'норм.', 'знаешь не особо.', 'ну уже лучше когда ты написала)']))
+    if 'ничего' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ясно.', 'у тебя других ответов не бывает?', 'ничего?может ты просто говорить не хочешь?', 'тогда давай закончим такой бесполезный по твоему мнению разговор.']))
+    elif 'нормально' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ок, ясно.', 'и тебе нечего больше сказать?', 'такое впечатление чтоты вобще не хочешь со мной разговаривать. зачем тогда было писать', '']))
+    if 'плохо' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['мне жаль. хочешь поговорить?', 'почему плохо', 'что ты чувствуешь?', 'мне тоже плохо лен. не тебе одной.']))
+    elif 'замечательно' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ну я тогда рад за тебя', 'это стеб?', 'нуну))', 'я так и думал']))
+    if 'хочу' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['давай с этого места поподробнее)', 'можешь поконкретнее обьяснить чего ты хочешь?а то я не оч понимаю', 'ну я тебе только могу сказать что ты можешь делать как хочешь и что хочешь. это твоя жизнь помни об этом.', 'а не пожалеешь?']))
+    elif 'не хочу' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['я так и знал', 'тебя заносит Лен.', 'я тоже много чего не хочу.', 'но тем не менее)))понимаешь?))']))
+    if 'мудак' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['я думал ты такими словами не выражаешься Лен', 'вот это комплимент.', 'что я тбее такого сделал честно скажи', 'я этого не заслужил.такого обращения.']))
+    elif 'мудила' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['не очень приятно,ок?', 'Лен не очень приятно из уст молодой девушки такое слышать. просто неприятно)', 'ты только при других так не выражайся. уронишь свой статус. и мой заодно.', 'ну давай выпусти пар. что еще скажешь?']))
+    if 'сдохни' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['да да уже бегу', 'ты нормальная?', 'то есть ты мне смерти желаешь?подумай', 'ничего себе лен. я бы никогда живому человеку и вообще существу не пожелал бы смерти если чесно. ну тогда с улитокой я малой был еще. мне простительно']))
+    elif 'тварь' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['согласен', 'не согласен', 'называй как хочешь,только не блокируй ок?', 'ну да, тварь конечно.не пойму что я сделал не так']))
+    if 'ненавижу тебя' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['знаешь,уже взаимно', 'жаль.', 'по тебе не видно)', 'моя бабуля говорила милые бранятся только тешатся.']))
+    elif 'ненавижу' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ты достала.', 'знаешь что Лен? меня волнует то сколько в тебе агресии.', 'тебе легче от того что ты это сказала?', 'как знаешь.']))
+    if 'ничего' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ну дада, в твоем стиле', 'не сомневался что ты именно это скажешь.', 'ты как всегда никакой конкретики.жаль. я думал ты смелее', 'а можно поподробнее как-то?ты меня в тупик заводишь.']))
+    elif 'браво' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['брависсимо)это тебе браво Лена', 'спасибо очень приятно.', 'какая жестокая издевка', 'я прямо польщен.']))
+    if 'сволочь' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['почему?', 'Лен я старался чтоб все было нормально. но ты сама все испортила', 'как скажешь.', 'сволочью родился сволочью умру по твоей версии.а все остальное тебя не интересует.']))
+    elif 'потому' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['норм обьяснять не умеешь,а дурак я)', 'классный ответ лена! главное понятный', 'не хочешь разговаривать можем вообще не разговаривать.заблочь меня как раньше. буду только рад.', 'не понял если честно.']))
+    if 'да ты' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['бесишь', 'Лен перестань уже пожалуйста', 'я думал мы нормально поговорим', 'жаль что ты со мной так.']))
+    elif 'и ты' in message.text.lower():
+        bot.send_message(message.chat.id, 'НУ БЛИН ИЗВИИ ТОГДА')
+    if 'не прощу' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['думаешь еще сто таких на дороге валяется?', 'ты не боишься что останешься одна на всю жизнь?с такими запросами', 'не прощай.но не жалей потом смотри.', 'сто раз это слышал от тебя если честно']))
+    elif 'все равно' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['Лен между нами многое было и это не почеловечески', 'нуну. а запорожбе вспоминаешь', 'жаль.', 'а я еще бесчуственый. если бы я был среди нас бесчуственый поверь все подругому было бы']))
+    if 'с чем' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['со всем что скажешь, моя королева))', 'с тобой лен.с твоими словами', 'как это с чем. с тем что я плохой конечно же.', 'ни с чем если быть чесным.но ради тебя что угодно.']))
+    elif 'хочешь' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['что я сволочь и дурак дада)', 'хочу.', 'не очень хочется чтото.', 'ну ок.']))
+    if 'спасибо' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['не думал что еще от тебя это услышу.', 'не за что.', 'всегда пожалуйста лена', 'издеваешься. это жестоко.']))
+    elif 'смешно' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['знаешь ни капли.', 'тебе смешно?', 'ну смейся.', 'смейся паяц над разбитой любовью......']))
+    if 'прекрасно' in message.text.lower():
+        bot.send_message(message.chat.id, random.choice(['ты всегда хорошее расположение духа сохраняешь)', 'ну замечательно', 'лена ты просто чудо. это не издевка', 'ок. рад.']))
+    elif 'великолепно' in message.text.lower():
+        bot.send_message(message.chat.id, 'чувство прекрасного в тебе вечно да?')
+    if 'чудесно' in message.text.lower():
+        bot.send_message(message.chat.id, 'ну раз чудесно то я рад за тебя.')
+    elif 'прелестно' in message.text.lower():
+        bot.send_message(message.chat.id, 'издеваешься')
+    if 'за что' in message.text.lower():
+        bot.send_message(message.chat.id, 'за то что я может быть тебя ранил')
+    elif 'извини' in message.text.lower():
+        bot.send_message(message.chat.id, 'не извиняйся. никогда не перед кем')
+
+bot.polling()
