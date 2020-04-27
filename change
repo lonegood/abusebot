@@ -1,0 +1,4 @@
+$ git init
+$ git add .
+$ git commit -m ‘i_don't_know_what_am_I_doing_at_all’
+$ git push -u https://github.com/lonegood/abusebot
